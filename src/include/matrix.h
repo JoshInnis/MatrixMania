@@ -17,7 +17,7 @@ struct Matrix *copyMatrix(struct Matrix *A);
 struct Matrix *swapMatrixRows(struct Matrix *A, int row_1, int row_2);
 struct Matrix *multiplyMatrixRowByScalar(struct Matrix *A, int row, int scalar);
 struct Matrix *typeThreeElementaryRowOperation(struct Matrix *matrix, int r, int s, int scalar);
-
+int isRowEchelonForm(struct Matrix *matrix);
 
 
 #endif

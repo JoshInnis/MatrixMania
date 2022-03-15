@@ -83,4 +83,3 @@ struct Vector *loadVector(char *file) {
         return vect;
 }
 
-
