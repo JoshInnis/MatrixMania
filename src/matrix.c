@@ -34,6 +34,30 @@ void printMatrix(Matrix *m) {
         printf("]\n");
 }
 
+Matrix *addMatrix(Matrix *A, Matrix *B) {
+	Matrix *C = makeMatrix(A->rows, B->columns);
+
+        for (int i = 0; i < A->rows; i++) {
+                for (int j = 0; j < B->columns; j++) {
+                	C->data[i][j] = A->data[i][j] + B->data[i][j];
+                }
+        }
+
+        return C;
+}
+
+Matrix *subtractMatrix(Matrix *A, Matrix *B) {
+        Matrix *C = makeMatrix(A->rows, B->columns);
+
+        for (int i = 0; i < A->rows; i++) {
+                for (int j = 0; j < B->columns; j++) {
+                        C->data[i][j] = A->data[i][j] - B->data[i][j];
+                }
+        }
+
+        return C;
+}
+
 Matrix *multiplyMatrix(Matrix *A, Matrix *B) {
         Matrix *C = makeMatrix(A->rows, B->columns);
 
@@ -258,4 +282,40 @@ int isRowEchelonForm(Matrix *matrix) {
         }
 
         return true;
+}
+/*
+Matrix *splitSquareMatrix(Matrix *x, Matrix *y) {
+	Matrix *A, *B, *C, *D;
+	Matrix *return_matrix;
+
+	if (matrix->rows == 1) {
+		return_matrix = make_matrix(1, 1);
+		return_matrix->data[0][0] = x->data[0][0] * y->data[0][0];
+		return matrix;
+	}
+
+	return_matrix = make_matrix(x->rows, x->columns);
+
+	A = malloc(sizeof(Matrix));
+        A->rows = matrix->rows;
+        A->columns = matrix->columns;
+
+        B = malloc(sizeof(Matrix));
+        B->rows = matrix->rows;
+        B->columns = matrix->columns;
+
+	C = malloc(sizeof(Matrix));
+        C->rows = matrix->rows;
+        C->columns = matrix->columns;
+
+	D = malloc(sizeof(Matrix));
+        D->rows = matrix->rows;
+        D->columns = matrix->columns;
+
+	return
+}
+*/
+Matrix *multiplyMatrixStrassen(Matrix *A, Matrix *B) {
+	
+
 }

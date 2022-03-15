@@ -9,6 +9,7 @@ typedef struct Matrix {
 
 Matrix *makeMatrix(int rows, int columns);
 Matrix *multiplyMatrix(Matrix *A, Matrix *B);
+Matrix *multiplyMatrixStrassen(Matrix *A, Matrix *B);
 void printMatrix(Matrix *m);
 Matrix *makeIdentityMatrix(int size);
 Matrix *loadMatrix(char *file);
@@ -18,6 +19,7 @@ Matrix *swapMatrixRows(Matrix *A, int row_1, int row_2);
 Matrix *multiplyMatrixRowByScalar(Matrix *A, int row, int scalar);
 Matrix *typeThreeElementaryRowOperation(Matrix *matrix, int r, int s, int scalar);
 int isRowEchelonForm(Matrix *matrix);
-
+Matrix *addMatrix(Matrix *A, Matrix *B);
+Matrix *subtractMatrix(Matrix *A, Matrix *B);
 
 #endif
