@@ -7,10 +7,10 @@ LDIR =../lib
 
 LIBS=-lm
 
-_DEPS = matrix.h
+_DEPS = matrix.h vector.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = MatrixMadness.o matrix.o
+_OBJ = MatrixMadness.o matrix.o vector.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
