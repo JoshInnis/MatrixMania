@@ -1,4 +1,4 @@
-IDIR =../include
+IDIR =src/include
 CC=gcc
 CFLAGS=-I$(IDIR)
 
@@ -7,10 +7,10 @@ LDIR =../lib
 
 LIBS=-lm
 
-_DEPS = hellomake.h
+_DEPS = matrix.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = MatrixMadness.o
+_OBJ = MatrixMadness.o matrix.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
@@ -23,4 +23,4 @@ MatrixMaddness: $(OBJ)
 .PHONY: clean
 
 clean:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ 
+	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ MatrixMaddness 
