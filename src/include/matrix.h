@@ -9,7 +9,6 @@ typedef struct Matrix {
 
 Matrix *makeMatrix(int rows, int columns);
 Matrix *multiplyMatrix(Matrix *A, Matrix *B);
-Matrix *multiplyMatrixStrassen(Matrix *A, Matrix *B);
 void printMatrix(Matrix *m);
 Matrix *makeIdentityMatrix(int size);
 Matrix *loadMatrix(char *file);
