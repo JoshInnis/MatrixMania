@@ -5,8 +5,8 @@
 #include "vector.h"
 
 
-struct Vector *copyVector(struct Vector *vector) {
-        struct Vector *new_vector = makeVector(vector->size);
+Vector *copyVector(Vector *vector) {
+        Vector *new_vector = makeVector(vector->size);
 
         for (int i = 0; i < vector->size; i++) {
                 new_vector->data[i] = vector->data[i];
@@ -15,8 +15,8 @@ struct Vector *copyVector(struct Vector *vector) {
         return new_vector;
 }
 
-struct Vector *makeVector(int size) {
-        struct Vector *A = malloc(sizeof(Vector));
+Vector *makeVector(int size) {
+        Vector *A = malloc(sizeof(Vector));
 
         A->size = size;
 
@@ -25,7 +25,7 @@ struct Vector *makeVector(int size) {
         return A;
 }
 
-void printVector(struct Vector *v) {
+void printVector(Vector *v) {
         printf("[\n");
 
         for (int i = 0; i < v->size; i ++) {
@@ -38,8 +38,8 @@ void printVector(struct Vector *v) {
 }
 
 
-struct Vector *vectorAdd(struct Vector *a, struct Vector *b) {
-        struct Vector *v = copyVector(a);
+Vector *vectorAdd(Vector *a, Vector *b) {
+        Vector *v = copyVector(a);
 
 
         for (int i = 0; i < v->size; i++) {
@@ -49,7 +49,7 @@ struct Vector *vectorAdd(struct Vector *a, struct Vector *b) {
         return v;
 }
 
-struct Vector *loadVector(char *file) {
+Vector *loadVector(char *file) {
         FILE * fp;
         char * line = NULL;
         size_t len = 0;
@@ -60,7 +60,7 @@ struct Vector *loadVector(char *file) {
         read = getline(&line, &len, fp);
         sscanf(line, "%i", &size);
 
-        struct Vector *vect = makeVector(size);
+        Vector *vect = makeVector(size);
 
         int cur_row = 0;
         while ((read = getline(&line, &len, fp)) != -1) {

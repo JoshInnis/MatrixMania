@@ -10,8 +10,8 @@
 #define true 1
 #define false 0
 
-struct Matrix *vectorToMatrixRow(struct Matrix *matrix, struct Vector *vector, int row) {
-        struct Matrix *copy_matrix = copyMatrix(matrix);
+Matrix *vectorToMatrixRow(Matrix *matrix, Vector *vector, int row) {
+        Matrix *copy_matrix = copyMatrix(matrix);
 
 
         for (int i = 0; i < matrix->columns; i++) {
@@ -21,8 +21,8 @@ struct Matrix *vectorToMatrixRow(struct Matrix *matrix, struct Vector *vector, i
         return copy_matrix;
 }
 
-struct Vector *matrixColumnToVector(struct Matrix *matrix, int column) {
-	struct Vector *vector = makeVector(matrix->rows);
+Vector *matrixColumnToVector(Matrix *matrix, int column) {
+	Vector *vector = makeVector(matrix->rows);
 
 	for (int i = 0; matrix->rows; i++) {
 		vector->data[i] = matrix->data[i][column];
@@ -31,8 +31,8 @@ struct Vector *matrixColumnToVector(struct Matrix *matrix, int column) {
 	return vector;
 }
 
-struct Vector *matrixRowToVector(struct Matrix *matrix, int row) {
-	struct Vector *vector = makeVector(matrix->columns);
+Vector *matrixRowToVector(Matrix *matrix, int row) {
+	Vector *vector = makeVector(matrix->columns);
 
         for (int i = 0; i < matrix->columns; i++) {
 		 vector->data[i] = matrix->data[row][i];
@@ -42,8 +42,8 @@ struct Vector *matrixRowToVector(struct Matrix *matrix, int row) {
 }
 
 
-struct Vector *scalarMultiplyVector(struct Vector*vector, int scalar) {
-	struct Vector *copy_vector = copyVector(vector);
+Vector *scalarMultiplyVector(Vector*vector, int scalar) {
+	Vector *copy_vector = copyVector(vector);
 
 	for (int i = 0; i < copy_vector->size; i++) {
 		copy_vector->data[i] *= scalar;
@@ -52,7 +52,7 @@ struct Vector *scalarMultiplyVector(struct Vector*vector, int scalar) {
 	return copy_vector;
 }
 
-struct Matrix *typeThreeElementaryRowOperation(struct Matrix *matrix, int r, int s, int scalar) {
+Matrix *typeThreeElementaryRowOperation(Matrix *matrix, int r, int s, int scalar) {
 	return vectorToMatrixRow(
 		matrix,
 		vectorAdd(
@@ -66,12 +66,12 @@ struct Matrix *typeThreeElementaryRowOperation(struct Matrix *matrix, int r, int
 
 int main(const int argc, const char *argv[]) {
 	//Vector
-/*	struct Vector *v = loadVector("./A.vect");
+/*	Vector *v = loadVector("./A.vect");
 
 	printVector(v);
 */
         //Matrix
-	struct Matrix *A, *B, *C, *D;
+	Matrix *A, *B, *C, *D;
 
 	A = loadMatrix("./a.mat");
         B = loadMatrix("./b.mat");
