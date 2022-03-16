@@ -20,5 +20,7 @@ Matrix *typeThreeElementaryRowOperation(Matrix *matrix, int r, int s, int scalar
 int isRowEchelonForm(Matrix *matrix);
 Matrix *addMatrix(Matrix *A, Matrix *B);
 Matrix *subtractMatrix(Matrix *A, Matrix *B);
+int NumberofOperationsRequiredForMultiplication(Matrix *A, Matrix *B);
+
 
 #endif

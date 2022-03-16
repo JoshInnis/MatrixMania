@@ -5,6 +5,7 @@
 
 #include "matrix.h"
 #include "vector.h"
+#include "sparseMatrix.h"
 
 //#typedef bool int;
 #define true 1
@@ -78,52 +79,63 @@ int main(const int argc, const char *argv[]) {
 	C = loadMatrix("./c.mat");
         D = loadMatrix("./d.mat");
 
-	printf("A = ");
+	printf("A =\n");
 	printMatrix(A);
 
-/*
-	printf("B = ");
+        printf("matrixToSparseMatrix(A) =\n");
+
+
+	//SparseMatrix *sp = matrixToSparseMatrix(A);
+	printSparseMatrix(matrixToSparseMatrix(A));
+
+
+
+	printf("B =\n");
 	printMatrix(B);
 
-	printf("A*B = ");
+	printf("NumberOfOperations A*B = %i\n", NumberofOperationsRequiredForMultiplication(A, B));
+	printf("A*B =\n");
 	printMatrix(multiplyMatrix(A, B));
 
-	printf("C = ");
+	printf("C =\n");
 	printMatrix(C);
 
-        printf("D = ");
+        printf("D =\n");
         printMatrix(D);
-
-	printf("SwapRows(D, 1, 3) = ");
+/*
+	printf("SwapRows(D, 1, 3) =\n");
 	printMatrix(swapMatrixRows(D, 0, 2));
 
 
-	printf("multiplyMatrixRowByScalar(A, 0, 5) = ");
+	printf("multiplyMatrixRowByScalar(A, 0, 5) =\n");
 	printMatrix(multiplyMatrixRowByScalar(A, 0, 5));
-*/
 
 
-	printf("typeThreeElementaryRowOperation(A, 0, 1, 2) = ");
+
+	printf("typeThreeElementaryRowOperation(A, 0, 1, 2) =\n");
 	printMatrix(typeThreeElementaryRowOperation(A, 0, 1, 2));
-/*
-        printf("C*D = ");
+
+	printf("NumberOfOperations C*D = %i\n", NumberofOperationsRequiredForMultiplication(C, D));
+        printf("C*D =\n");
         printMatrix(multiplyMatrix(C, D));
 
-        printf("D*C = ");
+	printf("NumberOfOperations D*C = %i\n", NumberofOperationsRequiredForMultiplication(D, C));
+        printf("D*C =\n");
         printMatrix(multiplyMatrix(D, C));
 
-	printf("I(2) = ");
+	printf("I(2) =\n");
 	printMatrix(makeIdentityMatrix(2));
 
-	printf("I*A =");
+	printf("I*A =\n");
 	printMatrix(multiplyMatrix(makeIdentityMatrix(2), A));
 
 
-	printf("Transpose(C) = ");
+	printf("Transpose(C) = \n");
 	printMatrix(makeTransposeMatrix(C));
-
 */
+
 	
 
 	return 0;
 }
+

@@ -10,14 +10,14 @@
 #define true 1
 #define false 0
 
+int NumberofOperationsRequiredForMultiplication(Matrix *A, Matrix *B) {
+	return A->rows * A->columns * B->columns;
+}
 
 void printMatrix(Matrix *m) {
-
-        printf("[\n");
-
         for (int i = 0; i < m->rows; i ++) {
 
-                printf("[");
+                printf("|");
 
                 for (int j = 0; j < m->columns; j++) {
                         if (j == m->columns - 1) {
@@ -28,10 +28,8 @@ void printMatrix(Matrix *m) {
 
                 }
 
-                printf("]\n");
+                printf("|\n");
         }
-
-        printf("]\n");
 }
 
 Matrix *addMatrix(Matrix *A, Matrix *B) {
